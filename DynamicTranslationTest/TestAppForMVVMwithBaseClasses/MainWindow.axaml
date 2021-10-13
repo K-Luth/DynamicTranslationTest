@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="400" Height="250"
+        x:Class="TestAppForMVVMwithBaseClasses.MainWindow"
+        Title="TestAppForMVVMwithBaseClasses"
+        
+        xmlns:p="clr-namespace:TestAppForMVVMwithBaseClasses.Properties"
+        xmlns:l="clr-namespace:TestAppForMVVMwithBaseClasses.Localization"
+        l:Translation.ResourceManager="{x:Static p:Resources.ResourceManager}">
+  
+  <UniformGrid Columns="2" VerticalAlignment="Top">
+    <TextBlock Text="Set in code behind after button click." TextWrapping="Wrap" />
+    <TextBlock Name="TranslatedText1"  Background="LightGreen"/>
+    
+    <TextBlock Text="Using the translation class. (Doesn't update)" TextWrapping="Wrap"/>
+    <TextBlock Text="{l:LocExtensionWithMultipleResxFiles String1}"  Background="LightCoral"/>
+      
+    <Button Content="Dutch" Click="OnDutchClick" Width="150" HorizontalContentAlignment="Center" Margin="0 20 0 0" />
+    <Button Content="English" Click="OnEnglishClick" Width="150" HorizontalContentAlignment="Center" Margin="0 20 0 0" />
+  </UniformGrid>
+</Window>
